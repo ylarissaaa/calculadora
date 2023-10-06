@@ -1,24 +1,12 @@
-function insert(numum){
+const numero = document.getElementById('numero')
+const botaorandomico = document.getElementById('botaorandomico')
 
-    var numerodois = document.getElementById('resultado').innerHTML;
-    document.getElementById('resultado').innerHTML = numerodois + numum;
+const gerarNumero  = () => {
+    const constrandom = Math.floor(Math.random() * 100);
+
+    numero.textContent = constrandom;
 }
 
-function clean () {
+botaorandomico.addEventListener('click', gerarNumero);
 
-    document.getElementById('resultado').innerHTML = "";
-}
-
-function back () {
-
-    var voltar = document.getElementById('resultado').innerHTML;
-    document.getElementById('resultado').innerHTML = voltar.substring(0, voltar.length -1);
-}
-
-function calculator() {
-    var calcular = document.getElementById('resultado').innerHTML;
-
-    if(calcular) {
-        document.getElementById('resultado').innerHTML = eval(calcular)
-    }
-}
+gerarNumero();
